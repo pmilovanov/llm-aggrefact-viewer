@@ -1,0 +1,7 @@
+# The benchmark's files, if downloaded with `just fetch-data`. They must never be committed:
+# the dataset's terms forbid putting it where web crawlers can reach it (see README).
+/site/data/
+/.hf-download/
+*.parquet
+!/tests/fixtures/*.parquet
+node_modules/

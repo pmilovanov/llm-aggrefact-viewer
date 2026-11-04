@@ -1,0 +1,56 @@
+name: Test and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # The "ci" environment holds the optional HF_TOKEN secret. With it the tests also run
+    # against the real benchmark, downloaded into this runner only: never uploaded, and
+    # never printed (see tests/real-data.test.mjs). Without it they run on the invented
+    # fixture alone. (Pull requests from forks get no secrets, so they always do.)
+    environment: ci
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: astral-sh/setup-uv@v7
+        if: env.HF_TOKEN != ''
+      - name: Download the benchmark from its pinned revision
+        if: env.HF_TOKEN != ''
+        run: sh scripts/fetch-data.sh
+      - name: Test
+        run: node --test
+
+  deploy:
+    # Only main is published. The artifact is a fresh checkout of site/, so the benchmark is never deployed.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

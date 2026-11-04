@@ -1,0 +1,146 @@
+{
+ "dev": [
+  {
+   "dataset": "AggreFact-CNN",
+   "doc": "The town council met on Tuesday to discuss the harbour wall. Engineers said the wall was built in 1931 and last repaired in 1987.\n\nCouncillor Ames proposed a budget of 2.4 million pounds for the repairs. The motion passed by seven votes to two. Work is expected to begin in spring.",
+   "claim": "The harbour wall was built in 1931.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+   "dataset": "AggreFact-CNN",
+   "doc": "The town council met on Tuesday to discuss the harbour wall. Engineers said the wall was built in 1931 and last repaired in 1987.\n\nCouncillor Ames proposed a budget of 2.4 million pounds for the repairs. The motion passed by seven votes to two. Work is expected to begin in spring.",
+   "claim": "The wall was last repaired in 1997.",
+   "label": 0,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000001"
+  },
+  {
+   "dataset": "AggreFact-CNN",
+   "doc": "The town council met on Tuesday to discuss the harbour wall. Engineers said the wall was built in 1931 and last repaired in 1987.\n\nCouncillor Ames proposed a budget of 2.4 million pounds for the repairs. The motion passed by seven votes to two. Work is expected to begin in spring.",
+   "claim": "The motion passed by seven votes to two.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000002"
+  },
+  {
+   "dataset": "TofuEval-MeetB",
+   "doc": "The town council met on Tuesday to discuss the harbour wall. Engineers said the wall was built in 1931 and last repaired in 1987.\n\nCouncillor Ames proposed a budget of 2.4 million pounds for the repairs. The motion passed by seven votes to two. Work is expected to begin in spring.",
+   "claim": "Councillor Ames opposed the budget.",
+   "label": 0,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000003"
+  },
+  {
+   "dataset": "RAGTruth",
+   "doc": "Q: When does the bakery open?\nA: Our café opens at 7 a.m. on weekdays and 8 a.m. at weekends. We bake sourdough every morning 🍞 and close at 3 p.m.",
+   "claim": "The café opens at 7 a.m. on weekdays.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000004"
+  },
+  {
+   "dataset": "RAGTruth",
+   "doc": "Q: When does the bakery open?\nA: Our café opens at 7 a.m. on weekdays and 8 a.m. at weekends. We bake sourdough every morning 🍞 and close at 3 p.m.",
+   "claim": "The bakery is open on Sundays until 6 p.m.",
+   "label": 0,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000005"
+  },
+  {
+   "dataset": "RAGTruth",
+   "doc": "Q: When does the bakery open?\nA: Our café opens at 7 a.m. on weekdays and 8 a.m. at weekends. We bake sourdough every morning 🍞 and close at 3 p.m.",
+   "claim": "They bake sourdough every morning 🍞.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000006"
+  },
+  {
+   "dataset": "Wice",
+   "doc": "Astronomers in Chile observed a faint comet on 3 March. Its orbit takes roughly 240 years. The comet was named after the observatory's founder, Dr. Rosa Vidal. It will be visible with binoculars until late April.",
+   "claim": "The comet's orbit takes about 240 years.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000007"
+  },
+  {
+   "dataset": "Wice",
+   "doc": "Astronomers in Chile observed a faint comet on 3 March. Its orbit takes roughly 240 years. The comet was named after the observatory's founder, Dr. Rosa Vidal. It will be visible with binoculars until late April.",
+   "claim": "The comet was discovered by Dr. Rosa Vidal.",
+   "label": 0,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000008"
+  },
+  {
+   "dataset": "Reveal",
+   "doc": "Matcha is a powdered green tea. It is traditionally whisked with hot water, not boiled. 抹茶 means \"rubbed tea\".",
+   "claim": "Matcha is whisked with hot water.",
+   "label": 1,
+   "contamination_identifier": "0000000000000000000000000000000000000000000000000000000000000009"
+  },
+  {
+   "dataset": "Reveal",
+   "doc": "Matcha is a powdered green tea. It is traditionally whisked with hot water, not boiled. 抹茶 means \"rubbed tea\".",
+   "claim": "Matcha is whisked with hot water.",
+   "label": 0,
+   "contamination_identifier": "000000000000000000000000000000000000000000000000000000000000000a"
+  },
+  {
+   "dataset": "ExpertQA",
+   "doc": "Short note: the museum is closed on Mondays.",
+   "claim": "The museum is closed on Mondays.",
+   "label": 1,
+   "contamination_identifier": "000000000000000000000000000000000000000000000000000000000000000b"
+  },
+  {
+   "dataset": "ExpertQA",
+   "doc": "",
+   "claim": "An empty document supports nothing.",
+   "label": 0,
+   "contamination_identifier": "000000000000000000000000000000000000000000000000000000000000000c"
+  }
+ ],
+ "test": [
+  {
+   "dataset": "AggreFact-XSum",
+   "doc": "The volcano last erupted in 1902. Scientists monitor it with seismometers.",
+   "claim": "The volcano last erupted in 1902.",
+   "label": 1,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003e8"
+  },
+  {
+   "dataset": "AggreFact-XSum",
+   "doc": "The volcano last erupted in 1902. Scientists monitor it with seismometers.",
+   "claim": "The volcano erupted twice last year.",
+   "label": 0,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003e9"
+  },
+  {
+   "dataset": "TofuEval-MediaS",
+   "doc": "Q: When does the bakery open?\nA: Our café opens at 7 a.m. on weekdays and 8 a.m. at weekends. We bake sourdough every morning 🍞 and close at 3 p.m.",
+   "claim": "The café closes at 3 p.m.",
+   "label": 1,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003ea"
+  },
+  {
+   "dataset": "ClaimVerify",
+   "doc": "抹茶 (matcha) means \"rubbed tea\" in Japanese.",
+   "claim": "抹茶 means rubbed tea.",
+   "label": 1,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003eb"
+  },
+  {
+   "dataset": "FactCheck-GPT",
+   "doc": "The park is closed on Mondays and on public holidays.",
+   "claim": "The park opens every day.",
+   "label": 0,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003ec"
+  },
+  {
+   "dataset": "Lfqa",
+   "doc": "The library roof will be repaired. The work, costing 2.4 million pounds, begins in spring.",
+   "claim": "Repairs to the library roof begin in spring.",
+   "label": 1,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003ed"
+  },
+  {
+   "dataset": "Lfqa",
+   "doc": "The library roof will be repaired. The work, costing 2.4 million pounds, begins in spring.",
+   "claim": "The repairs will cost 4.2 million pounds.",
+   "label": 0,
+   "contamination_identifier": "00000000000000000000000000000000000000000000000000000000000003ee"
+  }
+ ]
+}
