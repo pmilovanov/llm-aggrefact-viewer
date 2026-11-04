@@ -12,10 +12,12 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # The "ci" environment holds the optional HF_TOKEN secret. With it the tests also run
+    # against the real benchmark, downloaded into this runner only: never uploaded, and
+    # never printed (see tests/real-data.test.mjs). Without it they run on the invented
+    # fixture alone. (Pull requests from forks get no secrets, so they always do.)
+    environment: ci
     env:
-      # Optional repository secret. With it the tests also run against the real benchmark,
-      # downloaded into this runner only: never uploaded, and never printed (see
-      # tests/real-data.test.mjs). Without it they run on the invented fixture alone.
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
     steps:
       - uses: actions/checkout@v7

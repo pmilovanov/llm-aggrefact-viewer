@@ -123,7 +123,7 @@ The tests use `node --test`:
 - `tests/lib.test.mjs` and `tests/corpus.test.mjs` run on `tests/fixtures/`. That is a miniature benchmark with invented texts, written by pyarrow like the real files (`just fixture`). pyarrow's own reading of it is stored in `expected.json`, and the parquet reader must reproduce it exactly.
 - `tests/real-data.test.mjs` runs when `site/data/` holds the real files. It checks a SHA-256 digest of all 59,740 rows, computed with pyarrow by `just digest`, the subset sizes and label counts, and the data-check totals, all counted independently with pyarrow. It is written so that a failure prints numbers, never text.
 
-CI runs the tests on every push and pull request, then publishes `site/` from `main` to GitHub Pages. If the repository has an `HF_TOKEN` secret, CI also downloads the pinned files into the runner and runs the real-data checks. The files are never uploaded or deployed.
+CI runs the tests on every push and pull request, then publishes `site/` from `main` to GitHub Pages. If the repository's `ci` environment has an `HF_TOKEN` secret, CI also downloads the pinned files into the runner and runs the real-data checks. The files are never uploaded or deployed.
 
 ## Licence and credits
 
